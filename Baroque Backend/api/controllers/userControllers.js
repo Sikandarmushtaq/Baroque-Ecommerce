@@ -2,12 +2,16 @@ const userModel = require("../models/userModel");
 const brevo = require("@getbrevo/brevo");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const brevoClient = new brevo.BrevoClient({
+  apiKey: process.env.BREVO_API_KEY,
+});
 
 module.exports = {
-  sendOtp: async function (req, res) {
-    try {
-      let user = await userModel.findOne({ email: req.body.email });
-        console.log(
+sendOtp: async function (req, res) {
+  try {
+    let user = await userModel.findOne({ email: req.body.email });
+
+    console.log(
       "Brevo API Key:",
       process.env.BREVO_API_KEY ? "YES" : "NO"
     );
@@ -17,50 +21,50 @@ module.exports = {
       process.env.BREVO_SENDER_EMAIL
     );
 
-      if (!user) {
-        user = await userModel.create({ email: req.body.email });
+    if (!user) {
+      user = await userModel.create({
+        email: req.body.email,
+      });
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    await userModel.findOneAndUpdate(
+      { email: req.body.email },
+      {
+        otp: otp,
+        otpExpiresAt: new Date(Date.now() + 5 * 60 * 1000),
       }
+    );
 
-      const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-      await userModel.findOneAndUpdate(
-        { email: req.body.email },
-        {
-          otp: otp,
-          otpExpiresAt: new Date(Date.now() + 5 * 60 * 1000),
-        },
-      );
-
-      const apiInstance = new brevo.TransactionalEmailsApi();
-
-      apiInstance.setApiKey(
-        brevo.TransactionalEmailsApiApiKeys.apiKey,
-        process.env.BREVO_API_KEY
-      );
-
-      const sendSmtpEmail = new brevo.SendSmtpEmail();
-
-      sendSmtpEmail.sender = {
+    await brevoClient.transactionalEmails.sendTransacEmail({
+      sender: {
         name: "Baroque Sikandar",
         email: process.env.BREVO_SENDER_EMAIL,
-      };
-
-      sendSmtpEmail.to = [
+      },
+      to: [
         {
           email: req.body.email,
         },
-      ];
+      ],
+      subject: "OTP Code",
+      textContent: `Your OTP is: ${otp}`,
+    });
 
-      sendSmtpEmail.subject = "OTP Code";
-      sendSmtpEmail.textContent = `Your OTP is: ${otp}`;
+    return res.json({
+      status: "success",
+      message: "OTP sent",
+    });
 
-      await apiInstance.sendTransacEmail(sendSmtpEmail);
+  } catch (err) {
+    console.log("Brevo Error:", err.message);
 
-      return res.json({ status: "success", message: "OTP sent" });
-    } catch (err) {
-      return res.json({ status: "error", message: err.message });
-    }
-  },
+    return res.json({
+      status: "error",
+      message: err.message,
+    });
+  }
+},
 
   verifyOtp: async function (req, res) {
     try {
