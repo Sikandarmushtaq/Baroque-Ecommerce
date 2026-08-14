@@ -22,22 +22,24 @@ module.exports = {
         },
       );
 
-   const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  family: 4,
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-});
-  transporter.sendMail({
-        from: process.env.EMAIL,
-        to: req.body.email,
-        subject: "OTP Code",
-        text: `Your OTP is: ${otp}`,
-      }).catch((err) => console.log("Email send error:", err.message));
+      const transporter = nodemailer.createTransport({
+        host: "smtp-relay.brevo.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.BREVO_LOGIN,
+          pass: process.env.BREVO_SMTP_KEY,
+        },
+      });
+
+      transporter
+        .sendMail({
+          from: process.env.BREVO_LOGIN,
+          to: req.body.email,
+          subject: "OTP Code",
+          text: `Your OTP is: ${otp}`,
+        })
+        .catch((err) => console.log("Email send error:", err.message));
 
       return res.json({ status: "success", message: "OTP sent" });
     } catch (err) {
