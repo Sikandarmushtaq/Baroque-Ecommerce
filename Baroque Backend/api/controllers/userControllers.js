@@ -32,13 +32,12 @@ module.exports = {
     pass: process.env.EMAIL_PASSWORD,
   },
 });
-
-      await transporter.sendMail({
+  transporter.sendMail({
         from: process.env.EMAIL,
         to: req.body.email,
         subject: "OTP Code",
         text: `Your OTP is: ${otp}`,
-      });
+      }).catch((err) => console.log("Email send error:", err.message));
 
       return res.json({ status: "success", message: "OTP sent" });
     } catch (err) {
