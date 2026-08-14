@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@getbrevo/brevo": "^6.0.3",
     "@sfpy/node-core": "^0.3.5",
     "axios": "^1.19.0",
     "bcrypt": "^6.0.0",

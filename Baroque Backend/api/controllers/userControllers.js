@@ -1,5 +1,5 @@
 const userModel = require("../models/userModel");
-const nodemailer = require("nodemailer");
+const brevo = require("@getbrevo/brevo");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -7,6 +7,15 @@ module.exports = {
   sendOtp: async function (req, res) {
     try {
       let user = await userModel.findOne({ email: req.body.email });
+        console.log(
+      "Brevo API Key:",
+      process.env.BREVO_API_KEY ? "YES" : "NO"
+    );
+
+    console.log(
+      "Brevo Sender:",
+      process.env.BREVO_SENDER_EMAIL
+    );
 
       if (!user) {
         user = await userModel.create({ email: req.body.email });
@@ -22,24 +31,30 @@ module.exports = {
         },
       );
 
-      const transporter = nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.BREVO_LOGIN,
-          pass: process.env.BREVO_SMTP_KEY,
-        },
-      });
+      const apiInstance = new brevo.TransactionalEmailsApi();
 
-      transporter
-        .sendMail({
-          from: process.env.BREVO_LOGIN,
-          to: req.body.email,
-          subject: "OTP Code",
-          text: `Your OTP is: ${otp}`,
-        })
-        .catch((err) => console.log("Email send error:", err.message));
+      apiInstance.setApiKey(
+        brevo.TransactionalEmailsApiApiKeys.apiKey,
+        process.env.BREVO_API_KEY
+      );
+
+      const sendSmtpEmail = new brevo.SendSmtpEmail();
+
+      sendSmtpEmail.sender = {
+        name: "Baroque Sikandar",
+        email: process.env.BREVO_SENDER_EMAIL,
+      };
+
+      sendSmtpEmail.to = [
+        {
+          email: req.body.email,
+        },
+      ];
+
+      sendSmtpEmail.subject = "OTP Code";
+      sendSmtpEmail.textContent = `Your OTP is: ${otp}`;
+
+      await apiInstance.sendTransacEmail(sendSmtpEmail);
 
       return res.json({ status: "success", message: "OTP sent" });
     } catch (err) {
@@ -197,6 +212,7 @@ module.exports = {
           },
         },
       });
+
       return res.json({ status: "success", message: "Address add ho gaya" });
     } catch (err) {
       return res.json({ status: "error", message: err.message });
@@ -231,7 +247,10 @@ module.exports = {
 
       await user.save();
 
-      return res.json({ status: "success", message: "Address update ho gayi" });
+      return res.json({
+        status: "success",
+        message: "Address update ho gayi",
+      });
     } catch (err) {
       return res.json({ status: "error", message: err.message });
     }
@@ -245,7 +264,10 @@ module.exports = {
         $pull: { addresses: { _id: addressId } },
       });
 
-      return res.json({ status: "success", message: "Address delete ho gaya" });
+      return res.json({
+        status: "success",
+        message: "Address delete ho gaya",
+      });
     } catch (err) {
       return res.json({ status: "error", message: err.message });
     }
