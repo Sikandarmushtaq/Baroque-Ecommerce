@@ -15,7 +15,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
     if (token) {
       try {
         const response = await axios.get(
-          "http://localhost:3000/cart/getcart",
+          "https://baroque-ecommerce.onrender.com/cart/getcart",
           {
             headers: {
               Authorization: token,
@@ -45,7 +45,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
     if (token) {
       try {
         await axios.put(
-          `http://localhost:3000/cart/updatecart/${id}`,
+          `https://baroque-ecommerce.onrender.com/cart/updatecart/${id}`,
           {
             quantity: quantity + 1,
           },
@@ -85,7 +85,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
     if (token) {
       try {
         await axios.put(
-          `http://localhost:3000/cart/updatecart/${id}`,
+          `https://baroque-ecommerce.onrender.com/cart/updatecart/${id}`,
           {
             quantity: quantity - 1,
           },
@@ -121,7 +121,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
     if (token) {
       try {
         await axios.delete(
-          `http://localhost:3000/cart/removecart/${id}`,
+          `https://baroque-ecommerce.onrender.com/cart/removecart/${id}`,
           {
             headers: {
               Authorization: token,

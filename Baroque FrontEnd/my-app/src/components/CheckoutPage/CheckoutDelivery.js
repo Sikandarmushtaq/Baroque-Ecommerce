@@ -14,7 +14,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
   const getAddresses = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/users/getaddresses",
+        "https://baroque-ecommerce.onrender.com/users/getaddresses",
         {
           headers: {
             Authorization: token,
@@ -64,7 +64,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
   const handleSaveAddress = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/users/addaddress",
+        "https://baroque-ecommerce.onrender.com/users/addaddress",
         data,
         {
           headers: {

@@ -27,7 +27,7 @@ const ProductInfo = ({ product }) => {
     if (token) {
       try {
         await axios.post(
-          "http://localhost:3000/cart/addcart",
+          "https://baroque-ecommerce.onrender.com/cart/addcart",
           {
             productId: String(productId),
             name: product.name,
@@ -91,7 +91,7 @@ const ProductInfo = ({ product }) => {
       console.log("Product image wishlist sey phly :", product.image);
 
       const response = await axios.post(
-        "http://localhost:3000/wishlist/addwishlist",
+        "https://baroque-ecommerce.onrender.com/wishlist/addwishlist",
         {
           productId: String(productId),
           name: product.name,

@@ -21,7 +21,7 @@ const AddressSection = () => {
   const fetchAddresses = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/users/getaddresses",
+        "https://baroque-ecommerce.onrender.com/users/getaddresses",
         { headers }
       );
 
@@ -56,7 +56,7 @@ const handleSave = async (data) => {
     if (selectedAddress) {
      
       const response = await axios.put(
-        `http://localhost:3000/users/updateaddress/${selectedAddress._id}`,
+        `https://baroque-ecommerce.onrender.com/users/updateaddress/${selectedAddress._id}`,
         data,
         { headers }
       );
@@ -71,7 +71,7 @@ const handleSave = async (data) => {
     } else {
    
       const response = await axios.post(
-        "http://localhost:3000/users/addaddress",
+        "https://baroque-ecommerce.onrender.com/users/addaddress",
         data,
         { headers }
       );
@@ -91,7 +91,7 @@ const handleSave = async (data) => {
 const handleDelete = async () => {
   try {
     const response = await axios.delete(
-      `http://localhost:3000/users/deleteaddress/${selectedAddress._id}`,
+      `https://baroque-ecommerce.onrender.com/users/deleteaddress/${selectedAddress._id}`,
       { headers }
     );
 

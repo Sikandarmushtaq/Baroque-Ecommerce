@@ -13,7 +13,7 @@ const AdminContactList = () => {
       const adminToken = localStorage.getItem("adminToken");
 
       const response = await axios.get(
-        "http://localhost:3000/admin/getadmincontacts",
+        "https://baroque-ecommerce.onrender.com/admin/getadmincontacts",
         {
           headers: {
             Authorization: adminToken,

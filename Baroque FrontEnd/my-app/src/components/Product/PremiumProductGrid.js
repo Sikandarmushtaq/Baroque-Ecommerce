@@ -11,7 +11,7 @@ const PremiumProductGrid = () => {
     const getProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/product/getallproducts",
+          "https://baroque-ecommerce.onrender.com/product/getallproducts",
         );
 
         if (response.data.status === "success") {

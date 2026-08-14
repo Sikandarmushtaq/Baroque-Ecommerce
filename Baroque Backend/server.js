@@ -28,6 +28,9 @@ app.use("/contact", contactRoutes);
 app.use("/order", orderRoutes);
 app.use("/admin", adminRoutes);
 app.use("/product", productRoutes);
+app.get("/ping", (req, res) => {
+  res.status(200).send("Server is awake");
+});
 
 const PORT = process.env.PORT || 3000;
 

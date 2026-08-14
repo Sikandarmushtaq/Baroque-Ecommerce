@@ -15,7 +15,7 @@ const WishlistPage = () => {
 
     try {
       const response = await axios.get(
-        "http://localhost:3000/wishlist/getwishlist",
+        "https://baroque-ecommerce.onrender.com/wishlist/getwishlist",
         {
           headers: {
             Authorization: token,
@@ -49,7 +49,7 @@ const WishlistPage = () => {
 
     try {
       const response = await axios.delete(
-        "http://localhost:3000/wishlist/removeallwishlist",
+        "https://baroque-ecommerce.onrender.com/wishlist/removeallwishlist",
         {
           headers: {
             Authorization: token,
@@ -72,7 +72,7 @@ const WishlistPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/wishlist/addwishlisttocart",
+        "https://baroque-ecommerce.onrender.com/wishlist/addwishlisttocart",
         {},
         {
           headers: {

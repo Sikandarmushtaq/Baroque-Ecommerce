@@ -18,7 +18,7 @@ const Verification = () => {
     if (localCart.length > 0) {
       try {
         await axios.post(
-          "http://localhost:3000/cart/mergecart",
+          "https://baroque-ecommerce.onrender.com/cart/mergecart",
           {
             localCart: localCart,
           },
@@ -49,7 +49,7 @@ const Verification = () => {
 
       if (enteredOtp) {
         response = await axios.post(
-          "http://localhost:3000/users/verifyotp",
+          "https://baroque-ecommerce.onrender.com/users/verifyotp",
           {
             email: email,
             otp: enteredOtp,
@@ -57,7 +57,7 @@ const Verification = () => {
         );
       } else {
         response = await axios.post(
-          "http://localhost:3000/users/loginwithpassword",
+          "https://baroque-ecommerce.onrender.com/users/loginwithpassword",
           {
             email: email,
             password: password,

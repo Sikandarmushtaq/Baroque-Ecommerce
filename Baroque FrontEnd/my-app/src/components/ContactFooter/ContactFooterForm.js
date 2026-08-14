@@ -21,7 +21,7 @@ const ContactForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/contact/createcontact",
+        "https://baroque-ecommerce.onrender.com/contact/createcontact",
         formData
       );
 
@@ -44,12 +44,12 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
 
-      {/* Name & Email */}
+  
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 
         <div>
-          <label className="text-sm text-gray-500 ml-3">
+          <label className="ml-3 text-sm text-gray-500">
             Name
           </label>
 
@@ -59,12 +59,12 @@ const ContactForm = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-4 outline-none focus:border-black"
+            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
           />
         </div>
 
         <div>
-          <label className="text-sm text-gray-500 ml-3">
+          <label className="ml-3 text-sm text-gray-500">
             E-mail
           </label>
 
@@ -74,17 +74,17 @@ const ContactForm = () => {
             placeholder="E-mail"
             value={formData.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-4 outline-none focus:border-black"
+            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
           />
         </div>
 
       </div>
 
-      {/* Message */}
+   
 
       <div>
 
-        <label className="text-sm text-gray-500 ml-3">
+        <label className="ml-3 text-sm text-gray-500">
           Message
         </label>
 
@@ -94,12 +94,12 @@ const ContactForm = () => {
           placeholder="Message"
           value={formData.message}
           onChange={handleChange}
-          className="w-full border border-gray-300 px-4 py-4 outline-none resize-none focus:border-black"
+          className="w-full px-4 py-4 border border-gray-300 outline-none resize-none focus:border-black"
         />
 
       </div>
 
-      {/* Button */}
+  
 
       <button
         type="submit"

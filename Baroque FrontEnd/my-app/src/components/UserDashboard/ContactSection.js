@@ -17,7 +17,7 @@ const ContactSection = () => {
 const fetchProfile = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:3000/users/profile",
+      "https://baroque-ecommerce.onrender.com/users/profile",
       { headers }
     );
 
@@ -41,7 +41,7 @@ const fetchProfile = async () => {
   const handleSave = async (data) => {
     try {
       await axios.put(
-        "http://localhost:3000/users/updateprofile",
+        "https://baroque-ecommerce.onrender.com/users/updateprofile",
         {
           firstName: data.firstName,
           lastName: data.lastName,

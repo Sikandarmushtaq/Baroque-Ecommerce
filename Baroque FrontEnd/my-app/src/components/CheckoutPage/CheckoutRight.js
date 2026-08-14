@@ -13,7 +13,7 @@ const CheckoutRight = () => {
       
         if (token) {
           const response = await axios.get(
-            "http://localhost:3000/cart/getcart",
+            "https://baroque-ecommerce.onrender.com/cart/getcart",
             {
               headers: {
                 Authorization: token,

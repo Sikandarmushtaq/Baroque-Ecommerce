@@ -12,7 +12,7 @@ const AdminOrders = () => {
       const adminToken = localStorage.getItem("adminToken");
 
       const response = await axios.get(
-        "http://localhost:3000/admin/getadminorders",
+        "https://baroque-ecommerce.onrender.com/admin/getadminorders",
         {
           headers: {
             Authorization: adminToken,
@@ -43,7 +43,7 @@ const AdminOrders = () => {
       const adminToken = localStorage.getItem("adminToken");
 
       await axios.put(
-        `http://localhost:3000/admin/updateorderstatus/${orderId}`,
+        `https://baroque-ecommerce.onrender.com/admin/updateorderstatus/${orderId}`,
         { status: newStatus },
         {
           headers: {

@@ -22,7 +22,7 @@ const AdminLoginForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/admin/adminlogin",
+        "https://baroque-ecommerce.onrender.com/admin/adminlogin",
         formData
       );
 

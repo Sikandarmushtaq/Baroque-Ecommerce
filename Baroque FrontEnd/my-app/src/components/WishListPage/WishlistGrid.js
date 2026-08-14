@@ -8,7 +8,7 @@ const WishlistGrid = ({ products, setProducts }) => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:3000/wishlist/removewishlist/${id}`,
+        `https://baroque-ecommerce.onrender.com/wishlist/removewishlist/${id}`,
         {
           headers: {
             Authorization: token,

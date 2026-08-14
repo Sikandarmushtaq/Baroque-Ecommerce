@@ -26,7 +26,7 @@ const OrderSuccess = () => {
 
        
         const response = await axios.post(
-          "http://localhost:3000/order/verifypayment",
+          "https://baroque-ecommerce.onrender.com/order/verifypayment",
           {
             tracker: tracker,
           }

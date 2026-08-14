@@ -13,7 +13,7 @@ const OrdersSection = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          "http://localhost:3000/order/getorders",
+          "https://baroque-ecommerce.onrender.com/order/getorders",
           {
             headers: {
               Authorization: token,

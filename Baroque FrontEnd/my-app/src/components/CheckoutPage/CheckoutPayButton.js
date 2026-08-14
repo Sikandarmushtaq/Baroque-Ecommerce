@@ -23,7 +23,7 @@ const CheckoutPayButton = ({
 
     
       const response = await axios.post(
-        "http://localhost:3000/order/createorder",
+        "https://baroque-ecommerce.onrender.com/order/createorder",
         {
           products: cartItems,
           totalPrice: totalPrice,

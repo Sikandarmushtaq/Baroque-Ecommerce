@@ -32,7 +32,7 @@ const ProductDetails = () => {
       
       try {
         const response = await axios.get(
-          `http://localhost:3000/product/getsingleproduct/${id}`
+          `https://baroque-ecommerce.onrender.com/product/getsingleproduct/${id}`
         );
 
         if (response.data.status === "success") {

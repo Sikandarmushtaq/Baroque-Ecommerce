@@ -26,7 +26,7 @@ const CheckoutLayout = () => {
       
         if (token) {
           const response = await fetch(
-            "http://localhost:3000/cart/getcart",
+            "https://baroque-ecommerce.onrender.com/cart/getcart",
             {
               headers: {
                 Authorization: token,

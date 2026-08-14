@@ -18,7 +18,7 @@ const navigate = useNavigate()
   const getProducts = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/product/getallproducts"
+        "https://baroque-ecommerce.onrender.com/product/getallproducts"
       );
 
       if (response.data.status === "success") {
@@ -59,7 +59,7 @@ const navigate = useNavigate()
       if (editingId) {
       
         await axios.put(
-          `http://localhost:3000/product/updateproduct/${editingId}`,
+          `https://baroque-ecommerce.onrender.com/product/updateproduct/${editingId}`,
           formData,
           {
             headers: {
@@ -72,7 +72,7 @@ const navigate = useNavigate()
       } else {
        
         await axios.post(
-          "http://localhost:3000/product/addproduct",
+          "https://baroque-ecommerce.onrender.com/product/addproduct",
           formData,
           {
             headers: {
@@ -111,7 +111,7 @@ const navigate = useNavigate()
   const handleDelete = async (productId) => {
     try {
       await axios.delete(
-        `http://localhost:3000/product/deleteproduct/${productId}`,
+        `https://baroque-ecommerce.onrender.com/product/deleteproduct/${productId}`,
         {
           headers: {
             Authorization: adminToken,
