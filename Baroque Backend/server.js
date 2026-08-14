@@ -29,6 +29,8 @@ app.use("/order", orderRoutes);
 app.use("/admin", adminRoutes);
 app.use("/product", productRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log("again connected");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
