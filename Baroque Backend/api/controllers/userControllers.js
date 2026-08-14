@@ -37,7 +37,7 @@ sendOtp: async function (req, res) {
       }
     );
 
-    await brevoClient.transactionalEmails.sendTransacEmail({
+   const result =  await brevoClient.transactionalEmails.sendTransacEmail({
       sender: {
         name: "Baroque Sikandar",
         email: process.env.BREVO_SENDER_EMAIL,
@@ -50,11 +50,12 @@ sendOtp: async function (req, res) {
       subject: "OTP Code",
       textContent: `Your OTP is: ${otp}`,
     });
-
+console.log("Brevo Response:", result);
     return res.json({
       status: "success",
       message: "OTP sent",
     });
+    
 
   } catch (err) {
     console.log("Brevo Error:", err.message);
