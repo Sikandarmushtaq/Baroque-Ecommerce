@@ -83,9 +83,9 @@ module.exports = {
 
         source: "hosted",
 
-        redirect_url: "http://localhost:3001/ordersuccess",
+        redirect_url:  `${process.env.FRONTEND_URL}/ordersuccess`,
 
-        cancel_url: "http://localhost:3001/ordercancel",
+        cancel_url: `${process.env.FRONTEND_URL}/ordercancel`,
       });
 
       console.log("SafePay Checkout URL:", checkoutURL);
