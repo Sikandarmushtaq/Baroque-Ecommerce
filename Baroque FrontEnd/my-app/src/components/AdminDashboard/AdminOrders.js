@@ -101,7 +101,9 @@ const AdminOrders = () => {
               <p className="text-gray-600">
                 Total: PKR {order.totalPrice}
               </p>
-
+                 <p>
+        
+      </p>
               <p className="text-gray-600">
                 Payment Status: {order.paymentStatus}
               </p>
@@ -117,7 +119,15 @@ const AdminOrders = () => {
               <p className="text-gray-600">
                 Address: {order.shippingAddress?.address}, {order.shippingAddress?.city}
               </p>
+                  <div className="mt-3">
+  <p className="font-semibold">Quantity:</p>
 
+  {order.products?.map((product, index) => (
+    <p key={index} className="text-gray-600">
+      {product.name}: {product.quantity}
+    </p>
+  ))}
+</div>
               <div className="mt-3">
                 <label className="mr-2 text-gray-600">
                   Order Status:

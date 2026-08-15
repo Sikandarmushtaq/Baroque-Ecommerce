@@ -46,7 +46,7 @@ const CheckoutPayment = () => {
           To confirm your order, click on the{" "}
           <span className="font-semibold text-black">
             Pay Now
-          </span>{" "}
+          </span>
           button below.
         </p>
       </div>
