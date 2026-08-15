@@ -29,15 +29,15 @@ const PremiumProductGrid = () => {
 
   if (loading) {
     return (
-      <section className="flex-1 px-10 py-10">
+      <section className="flex-1 px-4 py-6 sm:px-10 sm:py-10">
         <p className="text-gray-500">Loading...</p>
       </section>
     );
   }
 
   return (
-    <section className="flex-1 px-10 py-10">
-      <div className="grid grid-cols-2 gap-x-10 gap-y-20">
+    <section className="flex-1 px-4 py-6 sm:px-10 sm:py-10">
+      <div className="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-10 sm:gap-y-20">
         {products.map((product) => (
           <div key={product._id} className="group max-w-[470px]">
             <div className="relative overflow-hidden">
@@ -45,23 +45,24 @@ const PremiumProductGrid = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-[610px] object-cover transition duration-500 group-hover:scale-105"
+                  className="w-full h-[260px] sm:h-[420px] md:h-[610px] object-cover transition duration-500 group-hover:scale-105"
                 />
               </Link>
 
-              <button className="absolute flex items-center justify-center bg-white rounded-full top-4 left-4 w-11 h-11">
-                <FiHeart size={20} />
+              <button className="absolute flex items-center justify-center w-8 h-8 bg-white rounded-full top-2 left-2 sm:top-4 sm:left-4 sm:w-11 sm:h-11">
+                <FiHeart size={14} className="sm:hidden" />
+                <FiHeart size={20} className="hidden sm:block" />
               </button>
             </div>
 
-            <div className="mt-6">
-              <p className="text-[11px] uppercase tracking-[3px] text-gray-500">
+            <div className="mt-3 sm:mt-6">
+              <p className="text-[9px] sm:text-[11px] uppercase tracking-[2px] sm:tracking-[3px] text-gray-500">
                 {product.category}
               </p>
 
-              <h2 className="mt-3 text-[19px] tracking-wide">{product.name}</h2>
+              <h2 className="mt-1.5 sm:mt-3 text-sm sm:text-[19px] tracking-wide truncate">{product.name}</h2>
 
-              <p className="mt-3 text-[20px] font-medium">
+              <p className="mt-1.5 sm:mt-3 text-sm sm:text-[20px] font-medium">
                 PKR {product.price.toLocaleString()}
               </p>
             </div>

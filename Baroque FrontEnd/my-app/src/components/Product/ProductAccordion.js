@@ -9,9 +9,9 @@ const AccordionItem = ({ title, content }) => {
 
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full py-6"
+        className="flex items-center justify-between w-full py-4 sm:py-6"
       >
-        <span className="uppercase tracking-[3px] text-sm">
+        <span className="uppercase tracking-[2px] sm:tracking-[3px] text-xs sm:text-sm">
           {title}
         </span>
 
@@ -19,7 +19,7 @@ const AccordionItem = ({ title, content }) => {
       </button>
 
       {open && (
-        <div className="pb-6 leading-8 text-gray-600">
+        <div className="pb-4 text-sm leading-7 text-gray-600 sm:pb-6 sm:text-base sm:leading-8">
           {content}
         </div>
       )}
@@ -30,7 +30,7 @@ const AccordionItem = ({ title, content }) => {
 
 const ProductAccordion = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-8 sm:mt-12">
 
       <AccordionItem
         title="Product Details"

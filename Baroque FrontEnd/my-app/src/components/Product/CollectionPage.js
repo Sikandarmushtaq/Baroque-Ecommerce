@@ -13,7 +13,7 @@ const CollectionPage = () => {
       <div className="pt-[60px]">
         <PageFirst />
 
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           <Sidebar />
           <ProductGrid />
         </div>

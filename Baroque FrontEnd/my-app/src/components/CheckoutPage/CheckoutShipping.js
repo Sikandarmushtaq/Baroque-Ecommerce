@@ -2,11 +2,11 @@ const CheckoutShipping = () => {
   return (
     <div>
 
-      <h2 className="text-3xl font-light tracking-[3px] mb-8">
+      <h2 className="mb-6 text-2xl font-light tracking-[2px] sm:mb-8 sm:text-3xl sm:tracking-[3px]">
         Shipping Method
       </h2>
 
-      <div className="flex items-center justify-between p-5 border rounded-lg">
+      <div className="flex items-center justify-between gap-3 p-4 border rounded-lg sm:p-5">
 
         <div>
           <p className="font-medium">
@@ -18,7 +18,7 @@ const CheckoutShipping = () => {
           </p>
         </div>
 
-        <p className="font-semibold">
+        <p className="flex-shrink-0 font-semibold">
           FREE
         </p>
 

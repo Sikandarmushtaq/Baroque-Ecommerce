@@ -12,16 +12,16 @@ const filters = [
 
 const CollectionSidebar = () => {
   return (
-    <aside className="sticky top-[128px] h-[calc(100vh-128px)] w-[280px] shrink-0 border-r bg-white">
+    <aside className="w-full border-b bg-white lg:sticky lg:top-[128px] lg:h-[calc(100vh-128px)] lg:w-[280px] lg:shrink-0 lg:border-r lg:border-b-0">
 
-      <div className="px-8 pt-5">
+      <div className="px-4 pt-3 sm:px-8 sm:pt-5">
 
         {filters.map((item) => (
           <div
             key={item}
-            className="flex items-center justify-between py-8 border-b cursor-pointer"
+            className="flex items-center justify-between py-4 border-b cursor-pointer sm:py-8"
           >
-            <h2 className="text-[13px] tracking-[4px] uppercase">
+            <h2 className="text-xs sm:text-[13px] tracking-[2px] sm:tracking-[4px] uppercase">
               {item}
             </h2>
 

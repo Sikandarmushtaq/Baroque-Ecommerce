@@ -3,7 +3,7 @@ const CheckoutPayment = () => {
     <div className="w-full">
       
    
-      <h2 className="text-3xl font-light tracking-[3px] mb-2">
+      <h2 className="mb-2 text-2xl font-light tracking-[2px] sm:text-3xl sm:tracking-[3px]">
         Payment
       </h2>
 
@@ -12,7 +12,7 @@ const CheckoutPayment = () => {
       </p>
 
       <div className="overflow-hidden border border-gray-300 rounded-xl">
-        <div className="flex items-center justify-between px-5 py-4 bg-white">
+        <div className="flex flex-col items-start gap-3 px-4 py-4 bg-white sm:flex-row sm:items-center sm:justify-between sm:px-5">
           
           <div className="flex items-center gap-3">
             <input
@@ -41,7 +41,7 @@ const CheckoutPayment = () => {
       </div>
 
   
-      <div className="p-5 mt-5 border border-gray-200 bg-gray-50 rounded-xl">
+      <div className="p-4 mt-5 border border-gray-200 sm:p-5 bg-gray-50 rounded-xl">
         <p className="text-sm leading-6 text-gray-600">
           To confirm your order, click on the{" "}
           <span className="font-semibold text-black">

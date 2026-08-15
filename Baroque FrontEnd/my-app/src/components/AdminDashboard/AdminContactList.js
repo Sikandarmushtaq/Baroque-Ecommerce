@@ -41,16 +41,16 @@ const AdminContactList = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className="px-4 sm:px-6">
         <p className="text-gray-500">Loading...</p>
       </div>
     );
   }
 
   return (
-    <div>
+    <div className="px-4 sm:px-6">
 
-      <h2 className="text-3xl tracking-[5px] mb-8">
+      <h2 className="mb-6 text-2xl tracking-[3px] sm:mb-8 sm:text-3xl sm:tracking-[5px]">
         CONTACT LIST
       </h2>
 

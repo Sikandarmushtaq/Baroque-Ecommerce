@@ -66,19 +66,19 @@ const CheckoutLayout = () => {
   return (
   <div>
 
-  <div className="py-6 border-b">
+  <div className="py-4 border-b sm:py-6">
     <img
       src={logo}
       alt="logo"
-      className="w-40 mx-auto"
+      className="w-32 mx-auto sm:w-40"
     />
   </div>
 
 
-  <div className="max-w-[1500px] mx-auto grid grid-cols-12 items-start">
+  <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-start">
 
 
-    <div className="col-span-7 px-10 py-10">
+    <div className="px-4 py-6 sm:px-10 sm:py-10 lg:col-span-7">
       <CheckoutLeft
         address={address}
         setAddress={setAddress}
@@ -88,7 +88,7 @@ const CheckoutLayout = () => {
     </div>
 
 
-    <div className="col-span-5 border-l bg-[#fafafa] sticky top-0 self-start h-screen overflow-hidden p-10">
+    <div className="p-4 border-t sm:p-10 lg:border-t-0 lg:border-l bg-[#fafafa] lg:sticky lg:top-0 lg:self-start lg:h-screen overflow-hidden lg:col-span-5">
       <CheckoutRight />
     </div>
 

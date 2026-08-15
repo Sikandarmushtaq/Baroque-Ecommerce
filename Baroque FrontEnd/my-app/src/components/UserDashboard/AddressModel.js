@@ -37,19 +37,19 @@ const AddAddressModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-5">
-      <div className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-2xl bg-white p-8">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-3 sm:p-5">
+      <div className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-2xl bg-white p-5 sm:p-8">
 
     
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-4xl font-semibold">
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
+          <h2 className="text-2xl font-semibold sm:text-4xl">
             {initialData ? "Edit Address" : "Add Address"}
           </h2>
 
           <button
             type="button"
             onClick={onClose}
-            className="text-3xl text-gray-500 hover:text-black"
+            className="text-2xl text-gray-500 sm:text-3xl hover:text-black"
           >
             <IoClose />
           </button>
@@ -67,21 +67,21 @@ const AddAddressModal = ({
               name="country"
               value={formData.country}
               onChange={handleChange}
-              className="w-full p-4 border outline-none rounded-xl focus:border-black"
+              className="w-full p-3 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
             >
               <option>Pakistan</option>
             </select>
           </div>
 
          
-          <div className="grid grid-cols-2 gap-4 mb-5">
+          <div className="grid grid-cols-1 gap-4 mb-5 sm:grid-cols-2">
             <input
               type="text"
               name="firstName"
               placeholder="First Name"
               value={formData.firstName}
               onChange={handleChange}
-              className="p-4 border outline-none rounded-xl focus:border-black"
+              className="p-3 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
             />
 
             <input
@@ -90,7 +90,7 @@ const AddAddressModal = ({
               placeholder="Last Name"
               value={formData.lastName}
               onChange={handleChange}
-              className="p-4 border outline-none rounded-xl focus:border-black"
+              className="p-3 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
             />
           </div>
 
@@ -101,7 +101,7 @@ const AddAddressModal = ({
             placeholder="Address"
             value={formData.address}
             onChange={handleChange}
-            className="w-full p-4 mb-5 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-5 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
           />
 
        
@@ -111,18 +111,18 @@ const AddAddressModal = ({
             placeholder="Apartment, suite, etc. (optional)"
             value={formData.apartment}
             onChange={handleChange}
-            className="w-full p-4 mb-5 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-5 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
           />
 
         
-          <div className="grid grid-cols-2 gap-4 mb-5">
+          <div className="grid grid-cols-1 gap-4 mb-5 sm:grid-cols-2">
             <input
               type="text"
               name="city"
               placeholder="City"
               value={formData.city}
               onChange={handleChange}
-              className="p-4 border outline-none rounded-xl focus:border-black"
+              className="p-3 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
             />
 
             <input
@@ -131,7 +131,7 @@ const AddAddressModal = ({
               placeholder="Postal Code"
               value={formData.postalCode}
               onChange={handleChange}
-              className="p-4 border outline-none rounded-xl focus:border-black"
+              className="p-3 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
             />
           </div>
 
@@ -142,7 +142,7 @@ const AddAddressModal = ({
             placeholder="+92"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full p-4 mb-6 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-6 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
           />
 
         
@@ -154,36 +154,36 @@ const AddAddressModal = ({
               onChange={handleChange}
             />
 
-            <span>This is my default address</span>
+            <span className="text-sm sm:text-base">This is my default address</span>
           </label>
 
        
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
 
             <div>
               {initialData && (
                 <button
                   type="button"
                   onClick={onDelete}
-                  className="text-red-600 hover:underline"
+                  className="text-sm text-red-600 sm:text-base hover:underline"
                 >
                   Delete
                 </button>
               )}
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-3 sm:gap-4">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-6 py-3 border rounded-full hover:bg-gray-100"
+                className="flex-1 px-6 py-2.5 sm:flex-none sm:py-3 text-sm sm:text-base border rounded-full hover:bg-gray-100"
               >
                 Cancel
               </button>
 
               <button
                 type="submit"
-                className="px-8 py-3 text-white bg-black rounded-full hover:bg-gray-800"
+                className="flex-1 px-8 py-2.5 sm:flex-none sm:py-3 text-sm sm:text-base text-white bg-black rounded-full hover:bg-gray-800"
               >
                 Save
               </button>

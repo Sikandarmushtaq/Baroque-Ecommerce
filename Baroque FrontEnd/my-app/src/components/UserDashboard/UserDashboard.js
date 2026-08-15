@@ -10,9 +10,9 @@ const UserDashboard = () => {
     <>
     
      
-    <main className="max-w-[1120px] mx-auto px-8 pt-24 pb-16">
+    <main className="max-w-[1120px] mx-auto px-4 sm:px-8 pt-16 sm:pt-24 pb-16">
 
-        <div className="flex gap-16">
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
 
           <DashboardSidebar />
 

@@ -5,7 +5,7 @@ import SignOutSection from "./SignOutSection";
 
 const DashboardContent = () => {
   return (
-    <section className="flex-1 max-w-[640px]">
+    <section className="flex-1 w-full max-w-[640px] px-4 sm:px-0">
       <ContactSection />
       <AddressSection />
       <SignOutSection />

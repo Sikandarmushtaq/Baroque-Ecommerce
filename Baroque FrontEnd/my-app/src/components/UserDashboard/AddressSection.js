@@ -108,18 +108,18 @@ const handleDelete = async () => {
 };
 
   return (
-    <section className="mb-12">
+    <section className="mb-10 sm:mb-12">
 
    
-      <div className="flex items-center justify-between mb-5">
+      <div className="flex items-center justify-between mb-4 sm:mb-5">
 
-        <h2 className="text-[18px] font-semibold">
+        <h2 className="text-base font-semibold sm:text-[18px]">
           Addresses
         </h2>
 
         <button
           onClick={handleAdd}
-          className="px-5 py-2 text-sm transition border rounded-full hover:bg-black hover:text-white"
+          className="px-4 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm transition border rounded-full hover:bg-black hover:text-white"
         >
           Add
         </button>
@@ -136,36 +136,37 @@ const handleDelete = async () => {
             <div
               key={address._id}
               onClick={() => handleEdit(address)}
-              className={`flex items-center justify-between px-4 py-4 cursor-pointer hover:bg-gray-50 ${
+              className={`flex items-center justify-between gap-2 px-3 py-3 sm:px-4 sm:py-4 cursor-pointer hover:bg-gray-50 ${
                 index !== addresses.length - 1 ? "border-b" : ""
               }`}
             >
 
             
-              <div className="flex items-center gap-4">
+              <div className="flex items-center min-w-0 gap-3 sm:gap-4">
 
              
-                <div className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-xl">
-                  <FiMapPin size={20} />
+                <div className="flex items-center justify-center flex-shrink-0 bg-gray-100 w-9 h-9 sm:w-10 sm:h-10 rounded-xl">
+                  <FiMapPin size={18} className="sm:hidden" />
+                  <FiMapPin size={20} className="hidden sm:block" />
                 </div>
 
-                <div>
+                <div className="min-w-0">
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
 
-                    <h3 className="text-[15px] font-semibold">
+                    <h3 className="text-sm font-semibold sm:text-[15px]">
                       {address.firstName} {address.lastName}
                     </h3>
 
                     {address.isDefault && (
-                      <span className="text-[12px] font-medium">
+                      <span className="text-[11px] sm:text-[12px] font-medium">
                         Default
                       </span>
                     )}
 
                   </div>
 
-                  <p className="text-[14px] text-gray-700">
+                  <p className="text-xs sm:text-[14px] text-gray-700 break-words">
                     {address.address}, {address.city} {address.postalCode},{" "}
                     {address.country}
                   </p>
@@ -176,8 +177,8 @@ const handleDelete = async () => {
 
           
               <IoChevronForward
-                size={20}
-                className="text-gray-500"
+                size={18}
+                className="flex-shrink-0 text-gray-500"
               />
 
             </div>
@@ -186,7 +187,7 @@ const handleDelete = async () => {
 
         ) : (
 
-          <div className="px-8 py-8 text-sm text-gray-500">
+          <div className="px-5 py-6 text-sm text-gray-500 sm:px-8 sm:py-8">
             No addresses added.
           </div>
 

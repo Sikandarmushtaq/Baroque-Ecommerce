@@ -32,32 +32,32 @@ const handleLogin = async () => {
 };
 
   return (
-    <div className="flex min-h-screen flex-col items-center bg-[#f7f7f7]">
+    <div className="flex min-h-screen flex-col items-center bg-[#f7f7f7] px-4">
 
     
-      <div className="mt-12">
+      <div className="mt-8 sm:mt-12">
         <img
           src={logo}
           alt="Baroque"
-          className="object-contain w-44"
+          className="object-contain w-32 sm:w-44"
         />
       </div>
 
    
-      <div className="mt-24 w-full max-w-[380px]">
+      <div className="mt-14 sm:mt-24 w-full max-w-[380px]">
 
-        <h1 className="text-5xl font-semibold">Sign in</h1>
+        <h1 className="text-3xl font-semibold sm:text-5xl">Sign in</h1>
 
-        <p className="mt-3 text-[17px] text-gray-600">
+        <p className="mt-3 text-sm text-gray-600 sm:text-[17px]">
           Sign in or create an account
         </p>
 
      
 
-        <div className="flex items-center my-8">
+        <div className="flex items-center my-6 sm:my-8">
           <div className="h-[1px] flex-1 bg-gray-300"></div>
 
-          <span className="mx-5 text-gray-500">or</span>
+          <span className="mx-4 text-sm text-gray-500 sm:mx-5 sm:text-base">or</span>
 
           <div className="h-[1px] flex-1 bg-gray-300"></div>
         </div>
@@ -69,13 +69,13 @@ const handleLogin = async () => {
   placeholder="Email"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
-  className="w-full px-4 text-lg bg-transparent border-2 border-black rounded-md outline-none h-14 pr-14"
+  className="w-full h-12 px-4 text-base bg-transparent border-2 border-black rounded-md outline-none sm:h-14 sm:text-lg pr-14"
 />
 <button
   onClick={handleLogin}
   className="absolute -translate-y-1/2 right-5 top-1/2"
 >
-  <IoArrowForward className="text-2xl" />
+  <IoArrowForward className="text-xl sm:text-2xl" />
   
 </button>
         </div>
@@ -90,7 +90,7 @@ const handleLogin = async () => {
             className="w-5 h-5 accent-black"
           />
 
-          <p className="text-[17px]">
+          <p className="text-sm sm:text-[17px]">
             Email me with news and offers
           </p>
 
@@ -98,7 +98,7 @@ const handleLogin = async () => {
 
      
 
-        <p className="mt-10 text-sm text-center text-gray-500">
+        <p className="mt-8 text-sm text-center text-gray-500 sm:mt-10">
           By continuing, you agree to our{" "}
           <span className="underline cursor-pointer">
             Terms of service
@@ -109,8 +109,8 @@ const handleLogin = async () => {
 
    
 
-      <div className="py-8 mt-auto">
-        <p className="cursor-pointer text-[15px] underline">
+      <div className="py-6 mt-auto sm:py-8">
+        <p className="cursor-pointer text-sm sm:text-[15px] underline">
           Privacy policy
         </p>
       </div>
@@ -119,4 +119,4 @@ const handleLogin = async () => {
   );
 };
 
-export default Login; 
+export default Login;

@@ -62,7 +62,7 @@ const Navbar = ({ blackIcons = false }) => {
     <>
      {!scrolled && <TopBar />}
       <nav
-        className={`fixed left-0 w-full z-40 flex items-center justify-between px-8 py-5 transition-all duration-300
+        className={`fixed left-0 w-full z-40 flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 transition-all duration-300
     ${!isCartOpen && !isMenuOpen ? "hover:bg-white hover:text-black" : ""}
     ${
       scrolled
@@ -72,33 +72,33 @@ const Navbar = ({ blackIcons = false }) => {
   `}
       >
         <IoMenuOutline
-          className="text-3xl cursor-pointer"
+          className="text-2xl cursor-pointer sm:text-3xl"
           onClick={() => setIsMenuOpen(true)}
         />
 
         <img
           src={logo}
           alt="Logo"
-          className="absolute w-32 -translate-x-1/2 left-1/2"
+          className="absolute w-24 -translate-x-1/2 sm:w-32 left-1/2"
         />
 
-        <div className="flex items-center gap-5 ml-auto">
-          <select className="text-sm uppercase bg-transparent outline-none cursor-pointer">
+        <div className="flex items-center gap-3 ml-auto sm:gap-5">
+          <select className="hidden text-sm uppercase bg-transparent outline-none cursor-pointer sm:block">
             <option className="text-black">Pakistan</option>
           </select>
 
           <button onClick={handleUserIconClick}>
-            <FiUser className="text-xl cursor-pointer" />
+            <FiUser className="text-lg cursor-pointer sm:text-xl" />
           </button>
-          <FiSearch className="text-xl cursor-pointer" />
+          <FiSearch className="text-lg cursor-pointer sm:text-xl" />
 
           <HiOutlineShoppingBag
-            className="text-xl cursor-pointer"
+            className="text-lg cursor-pointer sm:text-xl"
             onClick={() => setIsCartOpen(true)}
           />
 
           <FiHeart
-            className="text-xl cursor-pointer"
+            className="text-lg cursor-pointer sm:text-xl"
             onClick={() => {
               const token = localStorage.getItem("token");
 

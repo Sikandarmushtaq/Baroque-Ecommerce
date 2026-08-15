@@ -50,7 +50,7 @@ const ProductDetails = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen text-3xl">
+      <div className="flex items-center justify-center h-screen text-xl sm:text-3xl">
         Loading...
       </div>
     );
@@ -58,7 +58,7 @@ const ProductDetails = () => {
 
   if (!product) {
     return (
-      <div className="flex items-center justify-center h-screen text-3xl">
+      <div className="flex items-center justify-center h-screen px-4 text-xl text-center sm:text-3xl">
         Product Not Found
       </div>
     );
@@ -69,9 +69,9 @@ const ProductDetails = () => {
     
       <Navbar blackIcons={true} />
 
-      <section className="max-w-[1600px] mx-auto px-10 pt-40 pb-16">
+      <section className="max-w-[1600px] mx-auto px-4 sm:px-10 pt-24 sm:pt-40 pb-16">
 
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 sm:gap-12 lg:gap-20">
 
         
           <ProductGallery images={[product.image]} />

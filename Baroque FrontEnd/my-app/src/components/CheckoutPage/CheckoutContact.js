@@ -6,9 +6,9 @@ const CheckoutContact = () => {
 
     
 
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-2 mb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
 
-        <h2 className="text-3xl font-light tracking-[3px]">
+        <h2 className="text-2xl font-light tracking-[2px] sm:text-3xl sm:tracking-[3px]">
           Contact
         </h2>
 
@@ -29,7 +29,7 @@ const CheckoutContact = () => {
       <input
         type="email"
         placeholder="Email"
-        className="w-full px-5 py-4 border rounded-lg outline-none focus:border-black"
+        className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base focus:border-black"
       />
 
     
@@ -49,13 +49,13 @@ const CheckoutContact = () => {
 
    
 
-      <div className="mt-8 border rounded-xl p-6 bg-[#fafafa]">
+      <div className="p-4 mt-8 border sm:p-6 rounded-xl bg-[#fafafa]">
 
         <h3 className="mb-2 font-medium">
           International Website
         </h3>
 
-        <p className="text-sm leading-7 text-gray-600">
+        <p className="text-sm leading-6 text-gray-600 sm:leading-7">
           Shopping from outside Pakistan?
           Visit our International Store for
           worldwide delivery.

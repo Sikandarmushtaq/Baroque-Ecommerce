@@ -64,7 +64,7 @@ const CheckoutPayButton = ({
   return (
     <button
       onClick={handlePayNow}
-      className="w-full py-4 bg-black text-white text-sm tracking-[2px] hover:bg-gray-800 transition"
+      className="w-full py-3.5 sm:py-4 bg-black text-white text-xs sm:text-sm tracking-[1.5px] sm:tracking-[2px] hover:bg-gray-800 transition"
     >
       Pay Now
     </button>

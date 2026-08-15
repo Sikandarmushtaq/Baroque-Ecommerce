@@ -95,9 +95,9 @@ const CheckoutDelivery = ({ address, setAddress }) => {
   };
 
   return (
-    <div className="w-full p-8">
+    <div className="w-full p-4 sm:p-8">
 
-      <h2 className="text-3xl font-light tracking-[3px] mb-8">
+      <h2 className="mb-6 text-2xl font-light tracking-[2px] sm:mb-8 sm:text-3xl sm:tracking-[3px]">
         Delivery
       </h2>
 
@@ -106,7 +106,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
       {isLoggedIn ? (
         <>
 
-          <h3 className="mb-4 text-lg font-medium">
+          <h3 className="mb-4 text-base font-medium sm:text-lg">
             Shipping Address
           </h3>
 
@@ -114,7 +114,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
             <div
               key={item._id}
               onClick={() => handleSelectAddress(item)}
-              className="flex items-start gap-4 p-5 mb-3 border rounded-lg cursor-pointer hover:border-black"
+              className="flex items-start gap-3 p-4 mb-3 border rounded-lg cursor-pointer sm:gap-4 sm:p-5 hover:border-black"
             >
 
               <input
@@ -122,19 +122,20 @@ const CheckoutDelivery = ({ address, setAddress }) => {
                 name="shippingAddress"
                 checked={address?._id === item._id}
                 onChange={() => handleSelectAddress(item)}
+                className="mt-1"
               />
 
-              <div>
+              <div className="min-w-0">
 
-                <p className="font-semibold">
+                <p className="font-semibold break-words">
                   {item.firstName} {item.lastName}
                 </p>
 
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 break-words">
                   {item.address}
                 </p>
 
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 break-words">
                   {item.city} {item.postalCode},{" "}
                   {item.country}
                 </p>
@@ -190,7 +191,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               name="country"
               value={address.country}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             >
               <option value="Pakistan">
                 Pakistan
@@ -201,7 +202,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
 
       
 
-          <div className="grid grid-cols-2 gap-4 mb-5">
+          <div className="grid grid-cols-1 gap-4 mb-5 sm:grid-cols-2">
 
             <input
               type="text"
@@ -209,7 +210,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="First Name"
               value={address.firstName}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
             <input
@@ -218,7 +219,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="Last Name"
               value={address.lastName}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
           </div>
@@ -233,7 +234,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="Address"
               value={address.address}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
           </div>
@@ -248,7 +249,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="Apartment, suite, etc. (optional)"
               value={address.apartment}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
           </div>
@@ -263,14 +264,14 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="City"
               value={address.city}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
           </div>
 
          
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 
             <input
               type="text"
@@ -278,7 +279,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="Postal Code"
               value={address.postalCode}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
             <input
@@ -287,7 +288,7 @@ const CheckoutDelivery = ({ address, setAddress }) => {
               placeholder="Phone"
               value={address.phone}
               onChange={handleChange}
-              className="w-full px-5 py-4 border rounded-lg outline-none"
+              className="w-full px-4 py-3 text-sm border rounded-lg outline-none sm:px-5 sm:py-4 sm:text-base"
             />
 
           </div>

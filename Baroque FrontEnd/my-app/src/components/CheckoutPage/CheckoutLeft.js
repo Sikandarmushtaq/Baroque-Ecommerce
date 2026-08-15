@@ -11,15 +11,15 @@ const CheckoutLeft = ({
   totalPrice,
 }) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
 
   
-      <div className="p-6 border rounded-xl">
+      <div className="p-4 border sm:p-6 rounded-xl">
         <CheckoutContact />
       </div>
 
    
-      <div className="p-6 border rounded-xl">
+      <div className="p-4 border sm:p-6 rounded-xl">
         <CheckoutDelivery
           address={address}
           setAddress={setAddress}
@@ -27,12 +27,12 @@ const CheckoutLeft = ({
       </div>
 
     
-      <div className="p-6 border rounded-xl">
+      <div className="p-4 border sm:p-6 rounded-xl">
         <CheckoutShipping />
       </div>
 
    
-      <div className="p-6 border rounded-xl">
+      <div className="p-4 border sm:p-6 rounded-xl">
         <CheckoutPayment />
       </div>
 

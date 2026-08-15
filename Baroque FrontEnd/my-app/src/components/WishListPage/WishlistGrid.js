@@ -25,7 +25,7 @@ const WishlistGrid = ({ products, setProducts }) => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 gap-3 px-4 sm:grid-cols-3 sm:gap-6 sm:px-6 lg:grid-cols-4 lg:px-0">
       {products.map((product) => (
         <WishlistCard
           key={product._id}

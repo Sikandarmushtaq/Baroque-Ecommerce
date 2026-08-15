@@ -9,13 +9,13 @@ const SignOutSection = () => {
   };
 
   return (
-    <section className="mb-16">
-      <h2 className="text-[18px] font-semibold">Account</h2>
+    <section className="mb-10 sm:mb-16">
+      <h2 className="mb-4 text-base font-semibold sm:mb-0 sm:text-[18px]">Account</h2>
 
-      <div className="p-8 bg-white border rounded-2xl">
+      <div className="p-5 mt-0 bg-white border sm:p-8 sm:mt-4 rounded-2xl">
         <button
           onClick={handleSignOut}
-          className="px-6 py-2 transition border rounded-full hover:bg-black hover:text-white"
+          className="w-full px-6 py-2.5 text-sm transition border rounded-full sm:w-auto sm:py-2 sm:text-base hover:bg-black hover:text-white"
         >
           Sign Out
         </button>

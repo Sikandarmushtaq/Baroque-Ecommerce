@@ -57,16 +57,16 @@ const fetchProfile = async () => {
   };
 
   return (
-    <section className="mb-14">
+    <section className="mb-10 sm:mb-14">
 
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-[18px] font-semibold">
+      <div className="flex items-center justify-between gap-3 mb-5 sm:mb-6">
+        <h2 className="text-base font-semibold truncate sm:text-[18px]">
           {firstName || lastName ? `${firstName} ${lastName}` : "Your Name"}
         </h2>
 
         <button
           onClick={() => setShowModal(true)}
-          className="px-5 py-2 text-sm transition border rounded-full hover:bg-black hover:text-white"
+          className="flex-shrink-0 px-4 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm transition border rounded-full hover:bg-black hover:text-white"
         >
           Edit
         </button>
@@ -74,9 +74,9 @@ const fetchProfile = async () => {
 
       <div className="bg-white border shadow-sm rounded-2xl">
 
-        <div className="flex items-center justify-between px-5 py-5">
-          <span className="text-gray-500">Email</span>
-          <span className="font-medium">{email}</span>
+        <div className="flex items-center justify-between gap-3 px-4 py-4 sm:px-5 sm:py-5">
+          <span className="text-sm text-gray-500 sm:text-base">Email</span>
+          <span className="text-sm font-medium truncate sm:text-base">{email}</span>
         </div>
 
       </div>

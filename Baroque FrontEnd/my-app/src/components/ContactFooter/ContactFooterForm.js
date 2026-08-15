@@ -42,7 +42,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
 
   
 
@@ -59,7 +59,7 @@ const ContactForm = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
+            className="w-full px-4 py-3 text-sm border border-gray-300 outline-none sm:py-4 sm:text-base focus:border-black"
           />
         </div>
 
@@ -74,7 +74,7 @@ const ContactForm = () => {
             placeholder="E-mail"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
+            className="w-full px-4 py-3 text-sm border border-gray-300 outline-none sm:py-4 sm:text-base focus:border-black"
           />
         </div>
 
@@ -89,12 +89,12 @@ const ContactForm = () => {
         </label>
 
         <textarea
-          rows="7"
+          rows="6"
           name="message"
           placeholder="Message"
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-4 border border-gray-300 outline-none resize-none focus:border-black"
+          className="w-full px-4 py-3 text-sm border border-gray-300 outline-none resize-none sm:py-4 sm:text-base sm:rows-7"
         />
 
       </div>
@@ -103,7 +103,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="w-full bg-[#1f1f1f] text-white tracking-[5px] py-5 hover:bg-black transition"
+        className="w-full bg-[#1f1f1f] text-white tracking-[3px] sm:tracking-[5px] py-4 sm:py-5 text-sm sm:text-base hover:bg-black transition"
       >
         SEND MESSAGE
       </button>

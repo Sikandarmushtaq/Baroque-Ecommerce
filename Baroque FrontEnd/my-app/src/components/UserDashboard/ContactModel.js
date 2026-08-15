@@ -23,14 +23,14 @@ const ContactModel = ({ onClose, onSave, email, firstName, lastName }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-5">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 p-3 sm:p-5">
 
-      <div className="w-full max-w-xl p-8 bg-white rounded-2xl">
+      <div className="w-full max-w-xl p-5 bg-white rounded-2xl sm:p-8 max-h-[92vh] overflow-y-auto">
 
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-semibold">Edit Contact</h2>
+        <div className="flex items-center justify-between mb-6 sm:mb-8">
+          <h2 className="text-xl font-semibold sm:text-3xl">Edit Contact</h2>
 
-          <button onClick={onClose} className="text-3xl">
+          <button onClick={onClose} className="text-2xl sm:text-3xl">
             <IoClose />
           </button>
         </div>
@@ -45,7 +45,7 @@ const ContactModel = ({ onClose, onSave, email, firstName, lastName }) => {
             type="text"
             value={userFirstName}
             onChange={(e) => setUserFirstName(e.target.value)}
-            className="w-full p-4 mb-5 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-5 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
           />
 
         
@@ -56,7 +56,7 @@ const ContactModel = ({ onClose, onSave, email, firstName, lastName }) => {
             type="text"
             value={userLastName}
             onChange={(e) => setUserLastName(e.target.value)}
-            className="w-full p-4 mb-5 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-5 text-sm border outline-none sm:p-4 sm:text-base rounded-xl focus:border-black"
           />
 
         
@@ -67,21 +67,21 @@ const ContactModel = ({ onClose, onSave, email, firstName, lastName }) => {
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
-            className="w-full p-4 mb-8 border outline-none rounded-xl focus:border-black"
+            className="w-full p-3 mb-6 text-sm border outline-none sm:p-4 sm:mb-8 sm:text-base rounded-xl focus:border-black"
           />
 
-          <div className="flex justify-end gap-4">
+          <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end sm:gap-4">
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-3 border rounded-full"
+              className="px-6 py-2.5 sm:py-3 text-sm sm:text-base border rounded-full"
             >
               Cancel
             </button>
 
             <button
               type="submit"
-              className="px-8 py-3 text-white bg-black rounded-full"
+              className="px-8 py-2.5 sm:py-3 text-sm sm:text-base text-white bg-black rounded-full"
             >
               Save
             </button>

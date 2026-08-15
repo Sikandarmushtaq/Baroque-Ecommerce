@@ -130,15 +130,15 @@ const navigate = useNavigate()
   };
 
   return (
-    <section className="max-w-3xl px-6 py-20 mx-auto">
+    <section className="max-w-3xl px-4 py-10 mx-auto sm:px-6 sm:py-20">
 
-      <h1 className="text-3xl tracking-[5px] mb-10">
+      <h1 className="mb-6 text-2xl tracking-[3px] sm:mb-10 sm:text-3xl sm:tracking-[5px]">
         {editingId ? "EDIT PRODUCT" : "ADD NEW PRODUCT"}
       </h1>
 
   
 
-      <form onSubmit={handleSubmit} className="mb-16 space-y-6">
+      <form onSubmit={handleSubmit} className="mb-12 space-y-5 sm:mb-16 sm:space-y-6">
 
         <div>
           <label className="block mb-2 text-sm text-gray-500">
@@ -149,7 +149,7 @@ const navigate = useNavigate()
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            className="w-full px-4 py-3 border border-gray-300"
+            className="w-full px-3 py-2.5 text-sm border border-gray-300 sm:px-4 sm:py-3 sm:text-base"
           />
         </div>
 
@@ -162,7 +162,7 @@ const navigate = useNavigate()
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
+            className="w-full px-3 py-3 text-sm border border-gray-300 outline-none sm:px-4 sm:py-4 sm:text-base focus:border-black"
           />
         </div>
 
@@ -175,13 +175,13 @@ const navigate = useNavigate()
             type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="w-full px-4 py-4 border border-gray-300 outline-none focus:border-black"
+            className="w-full px-3 py-3 text-sm border border-gray-300 outline-none sm:px-4 sm:py-4 sm:text-base focus:border-black"
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-[#1f1f1f] text-white tracking-[3px] py-4 hover:bg-black transition"
+          className="w-full bg-[#1f1f1f] text-white tracking-[2px] sm:tracking-[3px] py-3.5 sm:py-4 text-sm sm:text-base hover:bg-black transition"
         >
           {editingId ? "UPDATE PRODUCT" : "SAVE PRODUCT"}
         </button>
@@ -190,7 +190,7 @@ const navigate = useNavigate()
 
    
 
-      <h2 className="text-2xl tracking-[4px] mb-6">
+      <h2 className="mb-4 text-xl tracking-[3px] sm:mb-6 sm:text-2xl sm:tracking-[4px]">
         MY PRODUCTS
       </h2>
 
@@ -203,17 +203,17 @@ const navigate = useNavigate()
           {products.map((product) => (
             <div
               key={product._id}
-              className="flex items-center justify-between p-4 border rounded-xl"
+              className="flex flex-col gap-4 p-4 border rounded-xl sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="flex items-center gap-4">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="object-cover w-16 h-20 rounded-lg"
+                  className="flex-shrink-0 object-cover w-16 h-20 rounded-lg"
                 />
 
-                <div>
-                  <p className="font-medium">{product.name}</p>
+                <div className="min-w-0">
+                  <p className="font-medium truncate">{product.name}</p>
                   <p className="text-sm text-gray-500">
                     PKR {product.price}
                   </p>
@@ -223,14 +223,14 @@ const navigate = useNavigate()
               <div className="flex gap-3">
                 <button
                   onClick={() => handleEdit(product)}
-                  className="px-4 py-2 text-sm transition border rounded-full hover:bg-black hover:text-white"
+                  className="flex-1 px-4 py-2 text-sm transition border rounded-full sm:flex-none hover:bg-black hover:text-white"
                 >
                   Edit
                 </button>
 
                 <button
                   onClick={() => handleDelete(product._id)}
-                  className="px-4 py-2 text-sm text-red-600 transition border rounded-full hover:bg-red-600 hover:text-white"
+                  className="flex-1 px-4 py-2 text-sm text-red-600 transition border rounded-full sm:flex-none hover:bg-red-600 hover:text-white"
                 >
                   Delete
                 </button>
